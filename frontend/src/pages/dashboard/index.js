@@ -1,12 +1,18 @@
+<<<<<<< HEAD
 import React, { useEffect, useState, useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import socketio from 'socket.io-client';
+=======
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+>>>>>>> frontend
 import api from '../../services/api';
 
 import './styles.css';
 
 export default function Dashboard(){
     const [ spots, setSpots] = useState([]);
+<<<<<<< HEAD
     const [ requests, setRequests] = useState([]);
 
     const user_id = localStorage.getItem('user');
@@ -19,12 +25,18 @@ export default function Dashboard(){
         });
     }, [requests, socket]);
 
+=======
+>>>>>>> frontend
     useEffect(()=> {
         async function loadSpots(){
             const user_id = localStorage.getItem('user');
             const response = await api.get('/dashboard', {
                 headers: { user_id }
             });
+<<<<<<< HEAD
+=======
+
+>>>>>>> frontend
             setSpots(response.data);
         }
 
@@ -33,6 +45,7 @@ export default function Dashboard(){
 
     return (
         <>
+<<<<<<< HEAD
             <ul className="notifications">
                 {requests.map( request => (
                     <li key={request._id}>
@@ -44,6 +57,8 @@ export default function Dashboard(){
                     </li>
                 ))}
             </ul>
+=======
+>>>>>>> frontend
             <ul className="spot-list">
                 { spots.map( spot => (
                     <li key={spot._id}>
