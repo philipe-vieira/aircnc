@@ -1,0 +1,7 @@
+node_modules
+
+uploads/*
+
+yarn.lock
+yarn-error.log
+package-lock.json
